@@ -5,3 +5,19 @@ The following demonstrates a bug in which user is prompted unnecessarily for an 
 Copy [modules/providers/aws/variables.tf.template]() to `modules/providers/aws/variables.tf` and configure the `default` value for the `profile` variable.
 
 # Expected result
+
+VPC is created without incident or prompt.
+
+# Actual result
+
+User is prompted immediately to supply value for `provider.aws.region`:
+
+```
+$ terraform plan
+provider.aws.region
+  The region where AWS operations will take place. Examples
+  are us-east-1, us-west-2, etc.
+
+  Default: us-east-1
+  Enter a value: ^C
+```
