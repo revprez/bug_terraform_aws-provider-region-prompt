@@ -1,0 +1,12 @@
+# Copy to variables.tf in this path and configure for your prefered
+# AWS CLI profile
+
+variable "profile" {
+  type = "string"
+  default = ""
+}
+
+variable "region" {
+  type = "region"
+  default = "us-east-1"
+}
